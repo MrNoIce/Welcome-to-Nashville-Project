@@ -1,21 +1,27 @@
 
 
+let searchConcertInput = document.querySelector('#concertSearch')
 function nameData(name) {
-    fetch("https://app.ticketmaster.com/discovery/v2/events.json?city=Nashville&apikey=kBa0lIh8vkJ1QB6WbS90QDIL7juNQ13B")
+
+    fetch(`https://app.ticketmaster.com/discovery/v2/events.json?city=Nashville&classificationId=KZFzniwnSyZfZ7v7nJ&apikey=kBa0lIh8vkJ1QB6WbS90QDIL7juNQ13B&keyword=${name}`)
+
         .then(response => response.json())
         .then(concertData => {
             let artistArray = concertData._embedded.events
-            let venueName = concertData._embedded.events
-            // ._embedded._embedded.events.venue  
+            // console.log(artistArray)
+
             for (let i = 0; i < artistArray.length; i++) {
-                console.log(artistArray[i].name)
-                console.log(venueName[i]._embedded)
+
+               var artistName = artistArray[i].name
+
+                // console.log(artistArray[i]._embedded.venues[0].name)
+                // console.log(artistArray[i]._embedded.venues[0].address.line1)
+                // console.log(artistArray[i].dates.start.localDate)
             }
+
         })
 }
-nameData()
 
+nameData("john")
 
-
-let sports = KZFzniwnSyZfZ7v7nE
-let music
+console.log(artistName)
