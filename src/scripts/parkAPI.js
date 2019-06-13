@@ -14,7 +14,7 @@ function nameData() {
         putInSearchResults.innerHTML += `<p id="idSearchResult${i}">${
           parkData[i].park_name
         }</p>
-          <button class="addPark" id="itenBtn--${i}">Add</button>`;
+          <button class="addPark" id="itenBtn--${i}">save</button>`;
         //event listener for the add button on the search results to add park name to itinerary
         addToBtn();
       }
