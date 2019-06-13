@@ -10,28 +10,56 @@
   <body>
     <article id="article">
       <div>
-        <input id="parkSearch" type="text" />
-        <button id="parkBtn">Search</button>
+        <!-- <input id="parkSearch" type="text" />
+        <button id="parkBtn">Search</button> -->
+        <select id="parkBtn">
+          <option value="Park Features">Park Features</option>
+          <option value="">Parks with Running Trails</option>
+        </select>
       </div>
       <div>
-        <input id="resturantSearch" type="text" />
+        <input
+          id="resturantSearch"
+          type="text"
+          placeholder="Search Restaraunts by Zipcode"
+        />
         <button id="resturantBtn">Search</button>
       </div>
       <div>
-        <input id="concertSearch" type="text" />
+        <input
+          id="concertSearch"
+          type="text"
+          placeholder="Search Concert by Artist"
+        />
         <button id="concertBtn">Search</button>
       </div>
       <div>
-        <input id="meetupSearch" type="text" />
+        <input
+          id="meetupSearch"
+          type="text"
+          placeholder="Search meetups by activity"
+        />
         <button id="meetupBtn">Search</button>
       </div>
     </article>
 
-    <div id="searchResults"></div>
-
-    <div id="itenirary"></div>
+    <div id="searchResults">
+      <h2>Search Results</h2>
+    </div>
+    
+    <div id="itenirary">
+      <h2>My Itinerary</h2>
+      <div id="park"></div>
+      <div id="restaraunt"></div>
+      <div id="concert"></div>
+      <div id="meetup"></div>
+    </div>
     <script src="scripts/keys.js"></script>
-     <script src="scripts/concerts/concerts-API.js"></script>
-    <!-- <script src="main.js"></script> -->
+    <script src="scripts/concerts/concerts-API.js"></script>
+    <script src="scripts/api.js"></script>
+    <script src="scripts/parkAPI.js"></script>
+    <script src="scripts/events.js"></script>
+    <script src="scripts/main.js"></script>
+    <script src="main.css"></script>
   </body>
 </html>

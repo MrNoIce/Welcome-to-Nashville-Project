@@ -3,10 +3,10 @@
 
 let searchInput = document.querySelector("#concertSearch")
 document.querySelector("#concertBtn").addEventListener("click", () => {
-    nameData(searchInput)
+    nameData1(searchInput)
 })
 
-function nameData(name) {
+function nameData1(name) {
 
     fetch(`https://app.ticketmaster.com/discovery/v2/events.json?city=Nashville&classificationId=KZFzniwnSyZfZ7v7nJ&apikey=${concertKey}&keyword=${name.value}`)
 
@@ -27,11 +27,11 @@ function nameData(name) {
                     `<p id="idSearchResults${i}">${artistName} - ${venuesAddress}</p> 
                     <button id="itenBtn--${i}"class="addConcert" type="button">save</button>
                     `;
-                    addToBtn()
+                    addToBtn1()
             }
         })
 }
-function addToIten() {
+function addTo() {
 
     let putInItinerary = document.querySelector("#concert")
     let btnID = event.target.id
@@ -42,14 +42,14 @@ function addToIten() {
     console.log(btnIdNumber)
     let addConcertInfo = document.querySelector('#idSearchResults' + btnIdNumber).innerHTML
     console.log(addConcertInfo)
-    putInItinerary.innerHTML += `<p>${addConcertInfo}</p>`
+    putInItinerary.innerHTML += `<p>Concert: ${addConcertInfo}</p>`
 
 }
 
 
-function addToBtn() {
+function addToBtn1() {
     let allAddBtns = document.querySelectorAll(".addConcert")
     for (let i = 0; i < allAddBtns.length; i++) {
-        allAddBtns[i].addEventListener('click', addToIten)
+        allAddBtns[i].addEventListener('click', addTo)
     }
 }
