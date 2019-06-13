@@ -10,7 +10,7 @@ function nameData() {
 
       //for loop that loops through park data, adds HTML to dom
       for (i = 0; i < 5; i++) {
-        putInSearchResults.innerHTML += `<p id=m"idSearchResult${i}">${
+        putInSearchResults.innerHTML += `<p id="idSearchResult${i}">${
           parkData[i].park_name
         }</p>
           <button class="addPark" id="itenBtn--${i}">Add</button>`;
