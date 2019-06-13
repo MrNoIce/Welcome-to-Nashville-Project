@@ -1,3 +1,13 @@
+<!-- tell them how to access your completed project on GitHub,
+*tell them how to obtain keys from each API, how to get the API parsed down into usable format/size (like, maybe what to do with the URLS on postman if you need to explain that)
+*Tell them where to put their keys
+*And, maybe make a suggestion on how they can make it prettier?
+
+#Welcome to the Zazzy-Zorillas' version of the "Welcome to Nashville" project!
+
+
+
+
 # Welcome to Nashville: Build an itinerary for a day trip to Music City
 
 In this app users can search for four different things to do/visit in Nashville:
