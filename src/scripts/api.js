@@ -28,7 +28,7 @@ function eventData(name) {
 }
 
 function addToIteniary(event) {
-  let addToIteniary = document.querySelector("#itenirary");
+  let addToIteniary = document.querySelector("#meetup");
   let btnID = event.target.id;
   let btnIDArray = btnID.split("--");
   let btnIDNumber = btnIDArray[1];
