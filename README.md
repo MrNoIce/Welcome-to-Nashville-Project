@@ -1,3 +1,10 @@
+##1. Choose a feature of a park from the drop down you would like to search for. The search results will automatically populate. Once your results have populated, choose the park you'd like to go to, by clicking the "add" button. Now the park you have added will appear in the itinerary.
+
+##2. Search the restaurant database by entering a zip code into the input box. Click the search button. See the top five highest rated restaurants in the area you've searched. Select a restaurant and click the save button. Now the restaurant will appear in the intinerary.
+
+##3. Search the EventBrite database by inputing a topic. Click the search button. See the top 5 results. Select a meetup you would like to attend and click save. Now your selected meetup will appear in the itinerary.
+
+##4. Search the concert database by by entering the name of the artist into the input box. Click search button. See results below including the name of the artist and the locaiton of the venue. Then select the concert you would like to attend and click the save button. Now the concert will appear in the itinerary.
 <!-- tell them how to access your completed project on GitHub,
 *tell them how to obtain keys from each API, how to get the API parsed down into usable format/size (like, maybe what to do with the URLS on postman if you need to explain that)
 *Tell them where to put their keys
