@@ -10,8 +10,13 @@
   <body>
     <article id="article">
       <div>
-        <input id="parkSearch" type="text" />
-        <button id="parkBtn">Search</button>
+        <!-- <input id="parkSearch" type="text" />
+        <button id="parkBtn">Search</button> -->
+        <select id = "parkBtn">
+          <option value="Park Features">Park Features</option>
+          <option value="">Parks with Running Trails</option>
+          
+        </select>
       </div>
       <div>
         <input id="resturantSearch" type="text" />
@@ -28,9 +33,13 @@
     </article>
 
     <div id="searchResults"></div>
+    
 
     <div id="itenirary"></div>
 
-    <script src="main.js"></script>
+    <script src="scripts/main.js"></script>
+    <script src ="scripts/parkAPI.js"></script>
+    <script src = "scripts/keys.js"></script>
+    <script src = "main.css"></script>
   </body>
 </html>
