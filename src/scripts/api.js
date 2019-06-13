@@ -34,7 +34,7 @@ function addToIteniary(event) {
   let btnIDNumber = btnIDArray[1];
   let addMeetUpName = document.querySelector("#searchResults--" + btnIDNumber)
     .textContent;
-  addToIteniary.innerHTML = `<P>${addMeetUpName}</p>`;
+  addToIteniary.innerHTML = `<p>Events: ${addMeetUpName}</p>`;
 }
 console.log("time");
 

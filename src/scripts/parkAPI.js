@@ -7,6 +7,7 @@ function nameData() {
       console.log(parkData);
       //This is where the search results go/are targeted
       let putInSearchResults = document.querySelector("#searchResults");
+      document.querySelector("#searchResults").innerHTML = "";
 
       //for loop that loops through park data, adds HTML to dom
       for (i = 0; i < 5; i++) {
