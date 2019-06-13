@@ -6,16 +6,14 @@ document.querySelector("#concertBtn").addEventListener("click", () => {
     nameData(searchInput)
 })
 
-
 function nameData(name) {
 
-    fetch(`https://app.ticketmaster.com/discovery/v2/events.json?city=Nashville&classificationId=KZFzniwnSyZfZ7v7nJ&apikey=kBa0lIh8vkJ1QB6WbS90QDIL7juNQ13B&keyword=${name.value}`)
+    fetch(`https://app.ticketmaster.com/discovery/v2/events.json?city=Nashville&classificationId=KZFzniwnSyZfZ7v7nJ&apikey=${concertKey}&keyword=${name.value}`)
 
         .then(response => response.json())
         .then(concertData => {
             let artistArray = concertData._embedded.events
-            // console.log(artistArray)
-
+            document.querySelector("#searchResults").innerHTML = "";
 
             for (let i = 0; i < 5; i++) {
 
@@ -23,20 +21,35 @@ function nameData(name) {
 
                 let venuesAddress = artistArray[i]._embedded.venues[0].name
 
+                let putInSearch = document.querySelector("#searchResults")
 
-                for (let j = 0; j < 6; j++) {
-                    putInDOM = `<p${i}-content> ${artistName} : ${venuesAddress}</p> <button id= ${i}-btn type="button">I'm button${i}</button>
-            `
-         
-                }
-                document.querySelector("#searchResults").innerHTML += putInDOM
-               
-
-        }
-        
+                putInSearch.innerHTML += putInDOM =
+                    `<p id="idSearchResults${i}">${artistName} - ${venuesAddress}</p> 
+                    <button id="itenBtn--${i}"class="addConcert" type="button">save</button>
+                    `;
+                    addToBtn()
+            }
+        })
 }
-        )}
-        
-// document.querySelector("#${i}-btn").addEventListener("click", ()=>{
-//     document.querySelector("#itenirary").innerHTML += putInDOM
+function addToIten() {
 
+    let putInItinerary = document.querySelector("#concert")
+    let btnID = event.target.id
+    console.log(btnID)
+    let btnIdArray = btnID.split("--")
+    console.log(btnIdArray);
+    let btnIdNumber = btnIdArray[1]
+    console.log(btnIdNumber)
+    let addConcertInfo = document.querySelector('#idSearchResults' + btnIdNumber).innerHTML
+    console.log(addConcertInfo)
+    putInItinerary.innerHTML += `<p>${addConcertInfo}</p>`
+
+}
+
+
+function addToBtn() {
+    let allAddBtns = document.querySelectorAll(".addConcert")
+    for (let i = 0; i < allAddBtns.length; i++) {
+        allAddBtns[i].addEventListener('click', addToIten)
+    }
+}
