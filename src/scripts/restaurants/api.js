@@ -23,8 +23,8 @@ resultField.addEventListener("click", () => {
         console.log("this is the event ID before split", event.target.id)
     let buttonIdArrayRest = event.target.id.split("-")
     console.log("This is the event ID after the split", buttonIdArrayRest)
-    let restaurantElement = document.querySelector(`#rest-${uniqueRestId[1]}`).textContent
-    putRestaurantIntoTheItinerary(restaurantElement)
+    let restaurantElement = document.getElementById(`rest-${uniqueRestId[1]}`).textContent
+    saveMyChoice(restaurantElement)
     }
 })
 
@@ -34,12 +34,12 @@ function addSearchResultsToDom(nameOfRestaurant) {
 
 function nameOfRestaurant(searchResults) {
     return `
-    <h2 id="rest-${uniqueRestId}">${searchResults.restaurant.name}</h2>
-    <button id="butt-${uniqueButtonId}">Save</button>
+    <h2 id = rest-${uniqueRestId[1]}>${searchResults.restaurant.name}</h2>
+    <button id = butt-${uniqueButtonId}>Save</button>
     `
 }
 
 function saveMyChoice (restaurantElement) {
-    document.querySelector("#restaurant").innerHTML = "Restaurant:" + restaurantElement;
+    document.querySelector("#restaurant").innerHTML += "Restaurant:" + restaurantElement;
 }
 
