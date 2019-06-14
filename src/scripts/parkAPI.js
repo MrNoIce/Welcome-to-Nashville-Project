@@ -1,6 +1,8 @@
-function nameData(name) {
+function nameData(name, feature) {
   fetch(
-    `https://data.nashville.gov/resource/74d7-b74t.json?${keys.key}=${keys.token}&${name}`
+    `https://data.nashville.gov/resource/74d7-b74t.json?${keys.key}=${
+      keys.token
+    }&${name}`
   )
     .then(response => response.json())
     .then(parkData => {
@@ -8,11 +10,15 @@ function nameData(name) {
       //This is where the search results go/are targeted
       let putInSearchResults = document.querySelector("#searchResults");
       document.querySelector("#searchResults").innerHTML = "";
+      let putInSearchResults2 = document.querySelector("#searchResults");
+      document.querySelector("#searchResults").innerHTML = "";
+      putInSearchResults2.innerHTML = `<h3>Parks with ${feature}</h3>`
 
       //for loop that loops through park data, adds HTML to dom
       for (i = 0; i < 5; i++) {
-        putInSearchResults.innerHTML += `<p id="idSearchResult${i}">${
-          parkData[i].park_name}</p><p>${parkData[i].mapped_location.human_address}</p>
+        putInSearchResults.innerHTML += `<p id="idSearchResult${i}"><b>${
+          parkData[i].park_name
+        }</b></p><p>${parkData[i].mapped_location.human_address}</p>
           <button class="addPark" id="itenBtn--${i}">save</button>`;
         //event listener for the add button on the search results to add park name to itinerary
         addToBtn();
@@ -45,29 +51,21 @@ function addToBtn() {
 }
 
 function fetchParkData(menu) {
-  if (menu.value == '2') {
-    nameData("hiking_trails=Yes")
-    
-}
-else if (menu.value == '3') {
-  nameData("basketball_courts=Yes")
-}
-else if(menu.value == '4') {
-  nameData("playground=Yes")
-}
-else if(menu.value == '5') {
-  nameData("disc_golf=Yes")
-}
-else if(menu.value == '6') {
-  nameData("nature_center=Yes")
-}
-else if(menu.value == '7') {
-  nameData("dog_park=Yes")
-}
-else if(menu.value == '8') {
-  nameData("lake=Yes")
-}
-else if(menu.value == '9') {
-  nameData("historic_features=Yes")
-}
+  if (menu.value == "2") {
+    nameData("hiking_trails=Yes", "Running Trails");
+  } else if (menu.value == "3") {
+    nameData("basketball_courts=Yes", "Basketball Courts");
+  } else if (menu.value == "4") {
+    nameData("playground=Yes", "Playgrounds");
+  } else if (menu.value == "5") {
+    nameData("disc_golf=Yes", "Disc Golf Courses");
+  } else if (menu.value == "6") {
+    nameData("nature_center=Yes", "Nature Centers");
+  } else if (menu.value == "7") {
+    nameData("dog_park=Yes", "Dog Parks");
+  } else if (menu.value == "8") {
+    nameData("lake=Yes", "Lake Access");
+  } else if (menu.value == "9") {
+    nameData("historic_features=Yes", "Historic Landmarks");
+  }
 }
