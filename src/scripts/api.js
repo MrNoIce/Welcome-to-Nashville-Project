@@ -13,7 +13,7 @@ function eventData(name) {
         let meetUpUrl = eventName[i].url;
         for (let j = 0; j < 5; j++) {
           addToDom = `<p id="searchResults--${i}"> ${meetupName} : <a target="_blank" href=${meetUpUrl}>Event page</a></p>
-          <button class="saveMeet" id="saveMeetUp--${i}">Save</button>
+          <button class="saveMeet" id="saveMeetUp--${i}">save</button>
           `;
         }
 

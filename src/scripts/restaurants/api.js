@@ -40,6 +40,6 @@ function nameOfRestaurant(searchResults) {
 }
 
 function saveMyChoice (restaurantElement) {
-    document.querySelector("#restaurant").innerHTML += "Restaurant:" + restaurantElement;
+    document.querySelector("#restaurant").innerHTML = "Restaurant:" + restaurantElement;
 }
 
