@@ -12,7 +12,7 @@ function nameData(name) {
       //for loop that loops through park data, adds HTML to dom
       for (i = 0; i < 5; i++) {
         putInSearchResults.innerHTML += `<p id="idSearchResult${i}">${
-          parkData[i].park_name}</p>
+          parkData[i].park_name}</p><p>${parkData[i].mapped_location.human_address}</p>
           <button class="addPark" id="itenBtn--${i}">save</button>`;
         //event listener for the add button on the search results to add park name to itinerary
         addToBtn();
