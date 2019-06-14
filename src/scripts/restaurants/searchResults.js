@@ -1,4 +1,4 @@
-let searchResult = document.querySelector("#restaurantSearch").value
+// let searchResult = document.querySelector("#restaurantSearch").value
 
 
 // function nameOfRestaurant(searchResults) {
