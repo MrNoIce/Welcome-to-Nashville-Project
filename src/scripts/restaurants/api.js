@@ -23,7 +23,8 @@ resultField.addEventListener("click", () => {
         console.log("this is the event ID before split", event.target.id)
     let buttonIdArrayRest = event.target.id.split("-")
     console.log("This is the event ID after the split", buttonIdArrayRest)
-    let restaurantElement = document.getElementById(`rest-${uniqueRestId[1]}`).textContent
+    let restaurantElement = document.getElementById(`rest-${buttonIdArrayRest[1]}`).textContent
+    console.log(restaurantElement)
     saveMyChoice(restaurantElement)
     }
 })
@@ -34,7 +35,7 @@ function addSearchResultsToDom(nameOfRestaurant) {
 
 function nameOfRestaurant(searchResults) {
     return `
-    <h2 id = rest-${uniqueRestId[1]}>${searchResults.restaurant.name}</h2>
+    <h2 id = rest-${uniqueRestId}>${searchResults.restaurant.name}</h2>
     <button id = butt-${uniqueButtonId}>Save</button>
     `
 }
