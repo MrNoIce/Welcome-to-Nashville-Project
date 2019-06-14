@@ -42,7 +42,7 @@ function addTo() {
     console.log(btnIdNumber)
     let addConcertInfo = document.querySelector('#idSearchResults' + btnIdNumber).innerHTML
     console.log(addConcertInfo)
-    putInItinerary.innerHTML += `<p>Concert: ${addConcertInfo}</p>`
+    putInItinerary.innerHTML = `<p>Concert: ${addConcertInfo}</p>`
 
 }
 
